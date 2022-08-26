@@ -31,13 +31,17 @@ import org.testcontainers.junit.jupiter.Testcontainers;
 @AutoConfigureMockMvc
 class ProductServiceApplicationTests {
 
-  @Container static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:4.4.2");
+  @Container
+  static MongoDBContainer mongoDBContainer = new MongoDBContainer("mongo:5.0");
 
-  @Autowired private MockMvc mockMvc;
+  @Autowired
+  private MockMvc mockMvc;
 
-  @Autowired private ObjectMapper objectMapper;
+  @Autowired
+  private ObjectMapper objectMapper;
 
-  @Autowired private ProductRepository productRepository;
+  @Autowired
+  private ProductRepository productRepository;
 
   @DynamicPropertySource
   static void setProperties(DynamicPropertyRegistry registry) {
